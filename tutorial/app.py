@@ -17,7 +17,7 @@ app = Flask(__name__)
 slack_events_adapter = SlackEventAdapter(config["SLACK_SIGNING_SECRET"], "/slack/events", app)
 
 # Initialize a Web API client
-slack_web_client = WebClient(token=config['SLACK_BOT_TOKEN'])
+slack_web_client = WebClient(token=config['SLACK_BOT_USER_OAUTH_TOKEN'])
 
 # For simplicity we'll store our app data in-memory with the following data structure.
 # onboarding_tutorials_sent = {"channel": {"user_id": OnboardingTutorial}}

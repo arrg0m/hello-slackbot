@@ -145,7 +145,7 @@ if __name__ == "__main__":
     logger.setLevel(logging.DEBUG)
     logger.addHandler(logging.StreamHandler())
     ssl_context = ssl_lib.create_default_context(cafile=certifi.where())
-    slack_token = config["SLACK_BOT_TOKEN"]
+    slack_token = config["SLACK_BOT_USER_OAUTH_TOKEN"]
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
     rtm_client = RTMClient(
