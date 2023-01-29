@@ -1,6 +1,6 @@
-slack_sdk==3.4.0
-slackeventsapi==2.2.1
-Flask==1.1.2
-pyyaml==5.4.1
-certifi==2020.12.5
-aiohttp==3.7.4
+slack_sdk==3.19.5
+slackeventsapi==3.0.1
+Flask==2.2.2
+pyyaml==6.0
+certifi==2022.12.7
+aiohttp==3.8.3

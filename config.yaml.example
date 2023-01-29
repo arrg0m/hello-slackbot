@@ -1,2 +1,6 @@
-SLACK_BOT_TOKEN: xoxb-blabla-blabla
+SLACK_BOT_USER_OAUTH_TOKEN: xoxb-blabla-blabla
+
+SLACK_APP_ID: abcdabcdabcd
+SLACK_CLIENT_ID: 123.123
+SLACK_CLIENT_SECRET: aaaaaaaaaaaaaaaa
 SLACK_SIGNING_SECRET: blablabladfgklsdjfwefw
