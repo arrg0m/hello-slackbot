@@ -8,7 +8,7 @@ from config import config
 
 client = AsyncWebClient(token=config['SLACK_BOT_USER_OAUTH_TOKEN'])
 
-async def post_message():
+async def post_message() -> None:
     text_message = 'Hello World!'
     try:
         response = await client.chat_postMessage(
@@ -21,5 +21,6 @@ async def post_message():
         assert e.response["error"]  # str like 'invalid_auth', 'channel_not_found'
         print(f"Got an error: {e.response['error']}")
 
-asyncio.run(post_message())
+if __name__ == "__main__":
+    asyncio.run(post_message())
 
