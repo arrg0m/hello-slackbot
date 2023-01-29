@@ -11,13 +11,11 @@ app = Flask(__name__)
 
 slack_client = WebClient(config['SLACK_BOT_USER_OAUTH_TOKEN'])
 
-
 """
-@app.route("/slack/events", methods=['POST'])
+@app.route(config["SLACK_EVENTS_ENDPOINT"], methods=['POST'])
 def challange() -> str:
     if (challenge := request.json.get('challenge')) is not None:
         return challenge
-    return "Hello, world!"
 """
 
 @app.route("/", methods=['GET'])
@@ -25,8 +23,8 @@ def hello() -> str:
     return "Hello, world!"
 
 slack_events_adapter = SlackEventAdapter(
-    config['SLACK_SIGNING_SECRET'],
-    "/slack/events",
+    config["SLACK_SIGNING_SECRET"],
+    config["SLACK_EVENTS_ENDPOINT"],
     app
 )
 
@@ -34,11 +32,9 @@ slack_events_adapter = SlackEventAdapter(
 def app_mention(event_data):
     pprint(event_data)
     message = event_data["event"]
-    channel = message["channel"]
-    user = message["user"]
     slack_client.chat_postMessage(
         channel=message["channel"],
-        text=f"How can I help you, <@{user}>?",
+        text=f"How can I help you, <@{message['user']}>?",
     )
 
 @slack_events_adapter.on("reaction_added")
@@ -56,4 +52,4 @@ def handle_message(event_data):
         slack_client.chat_postMessage(channel=channel, text=message)
 
 if __name__ == "__main__":
-    app.run(port=3000)
+    app.run(port=int(config["SLACK_APP_PORT"]))
