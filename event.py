@@ -33,6 +33,13 @@ slack_events_adapter = SlackEventAdapter(
 @slack_events_adapter.on("app_mention")
 def app_mention(event_data):
     pprint(event_data)
+    message = event_data["event"]
+    channel = message["channel"]
+    user = message["user"]
+    slack_client.chat_postMessage(
+        channel=message["channel"],
+        text=f"How can I help you, <@{user}>?",
+    )
 
 @slack_events_adapter.on("reaction_added")
 def reaction_added(event_data):
