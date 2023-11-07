@@ -5,16 +5,20 @@
 - `pip install requirements.txt`
 
 ## Adding new app to the Slack workspace
-- visit https://api.slack.com/app
+- visit [https://api.slack.com/apps](https://api.slack.com/apps)
 - follow the process
 
 - set configs appropriately:
-  - `SLACK_BOT_USER_OAUTH_TOKEN` from `Bot User OAuth Token` from `Features > OAuth & Permissions > OAuth Tokens for Your Workspace`
+  - `SLACK_BOT_USER_OAUTH_TOKEN` from `Bot User OAuth Token` from `Features: OAuth & Permissions > OAuth Tokens for Your Workspace`
 
-  - `SLACK_APP_ID` from `Settings > Basic Information > App Credentials > App ID`
+  - ![oauth_token image](assets/oauth_token.png)
+
+  - `SLACK_APP_ID` from `Settings: Basic Information > App Credentials > App ID`
   - `SLACK_CLIENT_ID` from `App Credentials > Client ID`
   - `SLACK_CLIENT_SECRET` from `App Credentials > Client Secret`
   - `SLACK_SIGNING_SECRET` from `App Credentials > Signing Secret`
+
+  - ![app_credentials image](assets/app_credentials.png)
 
 ## How to run
 - `python async_write.py`
