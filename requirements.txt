@@ -1,6 +1,6 @@
 slack_sdk==3.19.5
 slackeventsapi==3.0.1
-Flask==2.2.5
+Flask==2.3.0
 pyyaml==6.0
 certifi==2023.7.22
 aiohttp==3.8.5
