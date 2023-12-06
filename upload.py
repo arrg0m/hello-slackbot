@@ -17,6 +17,9 @@ def upload_file(filepath: str) -> None:
             request_file_info=True  # requires `files:read` permission to access uploaded file
         )
         assert response["file"]  # the uploaded file
+        print(f"Upload successful, {response['file']}")
+
+        # same file uploaded multiple time so no any announcement?
     except SlackApiError as e:
         # You will get a SlackApiError if "ok" is False
         assert e.response["ok"] is False
