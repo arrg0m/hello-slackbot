@@ -1,7 +1,7 @@
 # Hello, slackbot!
 
 ## requirements
-- Python 3.9
+- Python 3.10+
 - `pip install requirements.txt`
 
 ## Adding new app to the Slack workspace
